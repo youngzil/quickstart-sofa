@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<parent>
+		<groupId>org.quickstart</groupId>
+		<artifactId>quickstart-sofa</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath> <!-- lookup parent from repository -->
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>quickstart-sofa-bolt</artifactId>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}-${project.version}</name>
+	<url>http://maven.apache.org</url>
+	<description>Demo project for XXX</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sofa-bolt.version>1.4.1</sofa-bolt.version>
+		<sofa-hessian.version>3.3.0</sofa-hessian.version>
+		<sofa-common-tools.version>1.0.12</sofa-common-tools.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>bolt</artifactId>
+			<version>${sofa-bolt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${sofa-hessian.version}</version>
+		</dependency>
+
+		<!-- 日志门面使用slf4j，日志实现可以选择log4j、log4j2、logback， -->
+		<!--可参考：https://github.com/alipay/sofa-bolt/wiki/log_implementation_jar -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+
+		<!-- 日志实现3: logback START -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<!-- 日志实现3: logback END -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+
+	</dependencies>
+
+</project>
+
