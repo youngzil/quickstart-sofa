@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<parent>
+		<groupId>org.quickstart</groupId>
+		<artifactId>quickstart-sofa</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath> <!-- lookup parent from repository -->
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>quickstart-sofa-boot</artifactId>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}-${project.version}</name>
+	<url>http://maven.apache.org</url>
+	<description>Demo project for XXX</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sofaboot.version>2.3.2</sofaboot.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.alipay.sofa</groupId>
+				<artifactId>sofaboot-dependencies</artifactId>
+				<version>${sofaboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.4.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+	
+	 <!-- import SOFABoot Dependency healthcheck and infra -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>rpc-sofa-boot-starter</artifactId>
+		</dependency>
+
+		<!-- 引入健康检查扩展 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>healthcheck-sofa-boot-starter</artifactId>
+		</dependency>
+
+		<!-- 引入 SOFABoot Infra 依赖 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>infra-sofa-boot-starter</artifactId>
+		</dependency>
+
+		<!-- 添加类隔离框架依赖 -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>sofa-ark-springboot-starter</artifactId>
+		</dependency>
+		
+		<!-- test -->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>test-sofa-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 日志门面 (仅支持slf4j) -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<!-- 日志实现log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>com.alipay.sofa</groupId>
+				<artifactId>sofa-ark-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<!--goal executed to generate executable-ark-jar -->
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+
+						<configuration>
+							<!--specify destination where executable-ark-jar will be saved, default 
+								saved to ${project.build.directory} -->
+							<outputDirectory>./target</outputDirectory>
+
+							<!--default none -->
+							<arkClassifier>executable-ark</arkClassifier>
+
+							<!-- all class exported by ark plugin would be resolved by ark biz 
+								in default, if configure denyImportClasses, then it would prefer to load 
+								them by ark biz itself -->
+							<denyImportClasses>
+								<class>com.alipay.sofa.SampleClass1</class>
+								<class>com.alipay.sofa.SampleClass2</class>
+							</denyImportClasses>
+
+							<!-- Corresponding to denyImportClasses, denyImportPackages is package-level -->
+							<denyImportPackages>
+								<package>com.alipay.sofa</package>
+								<package>org.springframework</package>
+							</denyImportPackages>
+
+							<!-- denyImportResources can prevent resource exported by ark plugin 
+								with accurate name to be resolved -->
+							<denyImportResources>
+								<resource>META-INF/spring/test1.xml</resource>
+								<resource>META-INF/spring/test2.xml</resource>
+							</denyImportResources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
+

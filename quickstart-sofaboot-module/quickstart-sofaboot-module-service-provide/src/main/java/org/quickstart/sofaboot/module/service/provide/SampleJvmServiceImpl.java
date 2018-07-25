@@ -14,17 +14,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.quickstart.sofa.boot.demo;
+package org.quickstart.sofaboot.module.service.provide;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.quickstart.sofaboot.module.service.facade.SampleJvmService;
 
-@SpringBootApplication
-public class DemoApplication {
+/**
+ * @author xuanbei 18/5/5
+ */
+public class SampleJvmServiceImpl implements SampleJvmService {
+    private String message;
 
-    // 访问 http://localhost:8080/hello ，可以看到 HelloController 成功调用到了 service-provide 发布的服务。
+    public SampleJvmServiceImpl(String message) {
+        this.message = message;
+    }
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+    public SampleJvmServiceImpl() {
+    }
+
+    @Override
+    public String message() {
+        System.out.println(message);
+        return message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

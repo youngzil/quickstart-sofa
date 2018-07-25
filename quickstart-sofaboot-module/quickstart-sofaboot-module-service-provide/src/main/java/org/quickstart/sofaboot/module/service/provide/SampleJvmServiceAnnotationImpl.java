@@ -14,17 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.quickstart.sofa.boot.demo;
+package org.quickstart.sofaboot.module.service.provide;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.quickstart.sofaboot.module.service.facade.SampleJvmService;
 
-@SpringBootApplication
-public class DemoApplication {
+import com.alipay.sofa.runtime.api.annotation.SofaService;
 
-    // 访问 http://localhost:8080/hello ，可以看到 HelloController 成功调用到了 service-provide 发布的服务。
-
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+/**
+ * @author xuanbei 18/5/5
+ */
+@SofaService(uniqueId = "annotationImpl")
+public class SampleJvmServiceAnnotationImpl implements SampleJvmService {
+    
+    @Override
+    public String message() {
+        String message = "Hello, jvm service annotation implementation.";
+        System.out.println(message);
+        return message;
     }
+    
 }

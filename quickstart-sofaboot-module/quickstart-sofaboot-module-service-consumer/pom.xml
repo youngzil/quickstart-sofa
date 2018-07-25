@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <parent>
+    <groupId>org.quickstart</groupId>
+    <artifactId>quickstart-sofaboot-module</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>quickstart-sofaboot-module-service-consumer</artifactId>
+  <name>quickstart-sofaboot-module-service-consumer</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+   <dependencies>
+        <dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>runtime-sofa-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>quickstart-sofaboot-module-service-facade</artifactId>
+		</dependency>
+    </dependencies>
+    
+</project>
