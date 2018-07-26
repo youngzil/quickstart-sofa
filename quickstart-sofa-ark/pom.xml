@@ -24,12 +24,12 @@
 	<properties>
 		<project.encoding>UTF-8</project.encoding>
 
-		<spring.boot.version>1.4.2.RELEASE</spring.boot.version>
+		<spring.boot.version>1.5.14.RELEASE</spring.boot.version>
 
 		<license.maven.plugin.version>3.0</license.maven.plugin.version>
 		<maven.java.formatter.plugin>0.4</maven.java.formatter.plugin>
 		
-		<sofa-ark.version>0.2.0</sofa-ark.version>
+		<sofa-ark.version>0.4.0</sofa-ark.version>
 
 		<main.user.dir>${user.dir}</main.user.dir>
 	</properties>

@@ -17,11 +17,11 @@ public class HelloController {
     // 访问 http://localhost:8080/hello-sofamodule ，可以看到 HelloController 成功调用到了 service-provide 发布的服务。
 
     @SofaReference
-    private SampleJvmService sampleService;
+    private SampleJvmService sampleJvmService;
 
     @RequestMapping("/hello-sofamodule")
     public String hello() throws IOException {
-        return sampleService.message();
+        return sampleJvmService.message();
     }
 
 }
