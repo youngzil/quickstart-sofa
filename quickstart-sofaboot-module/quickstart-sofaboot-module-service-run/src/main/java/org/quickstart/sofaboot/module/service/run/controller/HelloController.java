@@ -23,5 +23,5 @@ public class HelloController {
     public String hello() throws IOException {
         return sampleService.message();
     }
-    
+
 }

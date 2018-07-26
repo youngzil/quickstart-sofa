@@ -2,8 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sofa="http://sofastack.io/schema/sofaboot"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://sofastack.io/schema/sofaboot http://sofastack.io/schema/sofaboot.xsd" default-autowire="byName">
-<<<<<<< HEAD
-
+            
 	<!-- SOFABoot 支持三种形式的服务发布，分别是： XML 方式、Annotation 方式以及 API 编码方式，这里演示的是 XML 方式发布服务。 -->
 	<bean id="sampleJvmService" class="org.quickstart.sofaboot.module.service.provide.SampleJvmServiceImpl">
 		<property name="message" value="Hello, jvm service xml implementation." />
@@ -16,16 +15,5 @@
 	<bean id="sampleJvmServiceAnnotation" class="org.quickstart.sofaboot.module.service.provide.SampleJvmServiceAnnotationImpl" />
 
 	<bean id="publishServiceWithClient" class="org.quickstart.sofaboot.module.service.provide.PublishServiceWithClient" init-method="init" />
-=======
 	
-	<!-- SOFABoot 支持三种形式的服务发布，分别是： XML 方式、Annotation 方式以及 API 编码方式，这里演示的是 XML 方式发布服务。 -->
-	<bean id="sampleService" class="org.quickstart.sofaboot.module.service.provide.SampleServiceImpl">
-		<property name="message" value="Hello, SOFABoot module，quickstart SOFABooot" />
-	</bean>
-
-	<sofa:service ref="sampleService" interface="org.quickstart.sofaboot.module.service.facade.SampleService">
-		<sofa:binding.jvm />
-	</sofa:service>
-
->>>>>>> branch 'master' of https://github.com/youngzil/quickstart-sofa
 </beans>
