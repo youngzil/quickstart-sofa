@@ -29,6 +29,7 @@
 		<module>quickstart-sofa-mesh</module>
 		<module>quickstart-sofa-rpc</module>
 		<module>quickstart-sofaboot-module</module>
+		<module>quickstart-sofa-jarslink</module>
 	</modules>
 
 </project>
