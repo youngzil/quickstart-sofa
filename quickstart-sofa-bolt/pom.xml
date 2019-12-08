@@ -20,7 +20,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sofa-bolt.version>1.4.1</sofa-bolt.version>
-		<sofa-hessian.version>3.3.0</sofa-hessian.version>
+		<sofa-hessian.version>3.3.6</sofa-hessian.version>
 		<sofa-common-tools.version>1.0.12</sofa-common-tools.version>
 	</properties>
 
